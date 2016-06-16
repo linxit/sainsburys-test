@@ -1,0 +1,14 @@
+upstream sainsburys {
+  <% @app_nodes.each do |node| -%>
+    server <%= node['network']['interfaces']['eth1']['addresses'].keys[1] %>:8484;
+  <% end -%>
+}
+
+server {
+  listen 80;
+
+  location / {
+    proxy_pass http://sainsburys;
+  }
+}
+

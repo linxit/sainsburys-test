@@ -1,0 +1,14 @@
+{
+    "name": "app",
+    "description": "Role for app server",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "default_attributes": {
+    },
+    "override_attributes": {
+    },
+    "run_list": [
+        "recipe[golang]",
+        "recipe[sainsburys]"
+    ]
+}
